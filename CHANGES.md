@@ -7,3 +7,5 @@ Change Log
 *Unreleased*
 
 **Features**
+* Uses docker to spin a local Cassandra database
+* External cluster support

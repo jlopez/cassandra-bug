@@ -24,3 +24,16 @@ It seems the queries are actually executed in Q1, Q3, Q2 order, which leads to
 this result.
 
 This bug can be avoided by introducing a delay between queries (>20ms).
+
+## Using external clusters
+The environment variable `CASSANDRA_URL` may be used to specify the database to
+connect to. If omitted, the test spins a Cassandra container to use as database.
+
+The format of the variable `CASSANDRA_URL` is:
+
+```
+cassandra://[user:password@]host[:port]/datacenter/keyspace
+```
+
+The keyspace should be prepared in advance with the script from `init.cql`,
+replace `ks` for the desired keyspace name.
